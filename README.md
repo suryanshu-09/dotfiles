@@ -41,3 +41,7 @@
 ### 10. nwg-dock-hyprland
 
 - no exclusive space + autohide
+
+### 11. wlogout
+
+- custom hover-bg
