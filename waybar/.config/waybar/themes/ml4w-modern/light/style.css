@@ -5,14 +5,13 @@
 @define-color color11 @on_primary_fixed;
 
 @define-color backgroundlight @on_surface;
-@define-color backgrounddark @background_dark;
+@define-color backgrounddark @blur_background;
 @define-color workspacesbackground1 @on_surface;
 @define-color workspacesbackground2 @inverse_on_surface;
 @define-color bordercolor @on_surface;
 @define-color textcolor1 @on_surface;
-@define-color textcolor2 @text_color;
+@define-color textcolor2 #505050;
 @define-color textcolor3 @on_surface;
 @define-color iconcolor @on_surface;
 
 @import "../style.css";
-
