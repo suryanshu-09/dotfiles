@@ -4,7 +4,7 @@
 
 ### 1. nvim
 
-![nvim](./assets/nvim.jpg)
+![nvim](./assests/nvim.jpg)
 
 - LazyVim
 - Gruvbox - dark
