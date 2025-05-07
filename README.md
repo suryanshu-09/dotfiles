@@ -5,7 +5,7 @@
 ### 1. nvim
 
 - LazyVim
-- Catpuccin - macchiato
+- Gruvbox - dark
 - complete lsp and cmp config for ts and go projects
 - codeium disabled
 
@@ -23,25 +23,29 @@
 
 ### 6. kitty
 
-- Catpuccin - macchiato
+- default with opacity
 - custom config for tabs and windows
 
-### 7. hypr
+### 7. tmux
+
+- custom config
+
+### 8. hypr
 
 - custom keybinds
 
-### 8. waybar
+### 9. waybar
 
 - custom modern light
 
-### 9. ml4w
+### 10. ml4w
 
 - change screenshot folder
 
-### 10. nwg-dock-hyprland
+### 11. nwg-dock-hyprland
 
 - no exclusive space + autohide
 
-### 11. wlogout
+### 12. wlogout
 
 - custom hover-bg
