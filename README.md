@@ -34,13 +34,13 @@
 ![kitty](./assests/kitty.jpg)
 
 - default with opacity
-- custom config for tabs and windows
+- customise config for <C> tabs and <C-S> windows
 
 ### 7. tmux
 
 ![tmux](./assests/tmux.jpg)
 
-- custom config
+- customise <C-a> config
 
 ---
 
@@ -54,7 +54,7 @@
 
 ### 9. waybar
 
-- custom modern light
+- customise modern light
 
 ### 10. ml4w
 
@@ -66,4 +66,4 @@
 
 ### 12. wlogout
 
-- custom hover-bg
+- customise hover-bg
