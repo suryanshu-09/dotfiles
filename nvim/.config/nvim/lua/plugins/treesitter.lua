@@ -50,6 +50,7 @@ return {
 				"query",
 				"regex",
 				"sql",
+				"svelte",
 				"toml",
 				"tsx",
 				"typescript",

@@ -10,9 +10,11 @@ return {
 				"shfmt",
 				"tailwindcss-language-server",
 				"typescript-language-server",
+				"svelte-language-server",
 				"css-lsp",
 				"pyright",
 				"gopls",
+				"html-lsp",
 			})
 		end,
 	},
@@ -23,6 +25,9 @@ return {
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"jcha0713/cmp-tw2css",
+		},
 		opts = {
 			inlay_hints = { enabled = true },
 			---@type lspconfig.options
@@ -42,6 +47,7 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
+				svelte = {},
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
@@ -139,7 +145,26 @@ return {
 					},
 				},
 			},
-			setup = {},
+			setup = {
+				svelte = function(_, opts)
+					require("lspconfig").svelte.setup(vim.tbl_deep_extend("force", opts, {
+						on_attach = function(client, bufnr)
+							vim.api.nvim_create_autocmd("BufWritePost", {
+								pattern = { "*.js", "*.ts" },
+								callback = function(ctx)
+									client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+								end,
+							})
+						end,
+					}))
+					return true -- Skip default setup
+				end,
+			},
 		},
+	},
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+		config = true,
 	},
 }
