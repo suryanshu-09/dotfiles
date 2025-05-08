@@ -1,5 +1,7 @@
 # Dotfiles
 
+### managed with GNU stow
+
 ## hyprland - ml4w
 
 ### 1. nvim
