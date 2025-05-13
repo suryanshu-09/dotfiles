@@ -20,6 +20,18 @@
 # Load modular configarion
 # -----------------------------------------------------
 
+# Add this near the top of your .zshrc
+autoload -Uz compinit
+ZSH_COMPDUMP="${ZSH_COMPDUMP:-~/.zcompdump}"
+
+if [[ ! -s $ZSH_COMPDUMP || $ZSH_COMPDUMP -ot ~/.zshrc ]]; then
+  compinit -i -C
+else
+  compinit -i
+fi
+
+zmodload zsh/zprof
+
 for f in ~/.config/zshrc/*; do
     if [ ! -d $f ]; then
         c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`

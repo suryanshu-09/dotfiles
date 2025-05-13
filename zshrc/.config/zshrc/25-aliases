@@ -210,6 +210,8 @@ alias n="nvim"
 alias nf='nvim $(fzf -m --preview="bat --color=always {}")'
 alias emacs="emacsclient -c -a 'emacs'"
 alias rotdir="~/.local/bin/rotdir"
+
+alias srz="exec zsh"
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -250,4 +252,5 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #export ftp_proxy=$http_proxy
 #export rsync_proxy=$http_proxy
 #export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,http://phc.prontonetworks.com/cgi-bin/authlogout,http://phc.prontonetworks.com/cgi-bin/authlogin"
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
+eval "$(fnm env --use-on-cd --shell zsh)"
