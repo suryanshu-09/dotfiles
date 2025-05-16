@@ -20,7 +20,11 @@
 # Load modular configarion
 # -----------------------------------------------------
 
+zmodload zsh/zprof
 # Add this near the top of your .zshrc
+
+ZSH_DISABLE_COMPAUDIT=true
+
 autoload -Uz compinit
 ZSH_COMPDUMP="${ZSH_COMPDUMP:-~/.zcompdump}"
 
@@ -29,8 +33,6 @@ if [[ ! -s $ZSH_COMPDUMP || $ZSH_COMPDUMP -ot ~/.zshrc ]]; then
 else
   compinit -i
 fi
-
-zmodload zsh/zprof
 
 for f in ~/.config/zshrc/*; do
     if [ ! -d $f ]; then
@@ -196,4 +198,4 @@ fi
 #
 # To initialize zoxide, add this to your shell configuration file (usually ~/.zshrc):
 #
-# eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"

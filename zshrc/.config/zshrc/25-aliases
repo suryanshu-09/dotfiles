@@ -216,7 +216,7 @@ alias srz="exec zsh"
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+# compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
@@ -233,7 +233,10 @@ function zle-keymap-select () {
 zle -N zle-keymap-select
 
 # Load syntax highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
+
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -254,3 +257,5 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,http://phc.prontonetworks.com/cgi-bin/authlogout,http://phc.prontonetworks.com/cgi-bin/authlogin"
 # source /usr/share/nvm/init-nvm.sh
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+export MANPAGER='nvim +Man!'
