@@ -18,3 +18,4 @@
 # them for future reference.
 
 $env.config.edit_mode = 'vi'
+$env.config.buffer_editor = 'vi'

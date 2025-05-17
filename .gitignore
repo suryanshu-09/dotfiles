@@ -1,3 +1,4 @@
 *.png
 mpd/.mpd/*
 !mpd/.mpd/mpd.conf
+history.txt
