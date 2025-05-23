@@ -149,65 +149,26 @@ return {
 		},
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			require("nvim-tree").setup({
-				hijack_netrw = false,
-				-- open_on_setup = false,
-				-- open_on_setup_file = false,
-				on_attach = function(bufnr)
-					local api = require("nvim-tree.api")
-
-					local function opts(desc)
-						return {
-							desc = "nvim-tree: " .. desc,
-							buffer = bufnr,
-							noremap = true,
-							silent = true,
-							nowait = true,
-						}
-					end
-
-					api.config.mappings.default_on_attach(bufnr)
-					vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
-
-					-- Auto-close tree when opening a file
-					api.events.subscribe("TreeOpenFile", function()
-						api.tree.close()
-					end)
-				end,
-				actions = {
-					open_file = {
-						quit_on_open = true,
+		"nvim-neo-tree/neo-tree.nvim",
+		enabled = true,
+		opts = {
+			filesystem = {
+				bind_to_cwd = true,
+				filtered_items = {
+					visible = false, -- when true, they will just be displayed differently than normal items
+					hide_dotfiles = true,
+					hide_gitignored = false,
+					hide_by_name = {
+						"node_modules",
+					},
+					always_show = { -- remains visible even if other settings would normally hide it
+						".gitignored",
+					},
+					always_show_by_pattern = { -- uses glob style patterns
+						".env*",
 					},
 				},
-				sort = {
-					sorter = "case_sensitive",
-				},
-				view = {
-					width = 30,
-					relativenumber = true,
-				},
-				renderer = {
-					group_empty = true,
-				},
-				filters = {
-					dotfiles = true,
-					custom = {
-						"node_modules/.*",
-					},
-				},
-				log = {
-					enable = true,
-					truncate = true,
-					types = {
-						diagnostics = true,
-						git = true,
-						profile = true,
-						watcher = true,
-					},
-				},
-			})
-		end,
+			},
+		},
 	},
 }

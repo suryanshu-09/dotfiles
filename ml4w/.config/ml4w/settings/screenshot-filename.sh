@@ -1,1 +1,1 @@
-NAME="Screenshot_$(date +%d%m%Y_%H%M%S).jpg"
+NAME="Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"
