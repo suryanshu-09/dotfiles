@@ -152,6 +152,11 @@ return {
 		"nvim-neo-tree/neo-tree.nvim",
 		enabled = true,
 		opts = {
+			close_if_last_window = false,
+			window = {
+				position = "left",
+				width = 30,
+			},
 			filesystem = {
 				bind_to_cwd = true,
 				filtered_items = {
@@ -170,5 +175,23 @@ return {
 				},
 			},
 		},
+		init = function()
+			-- Disable netrw (LazyVim may already do this)
+			-- vim.g.loaded_netrw = 1
+			-- vim.g.loaded_netrwPlugin = 1
+
+			-- Open neo-tree automatically when opening a directory
+			vim.api.nvim_create_autocmd("VimEnter", {
+				callback = function(data)
+					local is_dir = vim.fn.isdirectory(data.file) == 1
+					if is_dir then
+						vim.cmd.enew() -- Ensure a valid buffer exists
+						vim.defer_fn(function()
+							require("neo-tree.command").execute({ toggle = true, dir = data.file })
+						end, 10) -- Small delay to prevent window ID issues
+					end
+				end,
+			})
+		end,
 	},
 }
