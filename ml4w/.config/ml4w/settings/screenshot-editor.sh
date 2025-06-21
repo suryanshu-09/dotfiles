@@ -1,1 +1,1 @@
-gimp
+pinta
