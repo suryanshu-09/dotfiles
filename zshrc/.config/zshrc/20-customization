@@ -19,9 +19,13 @@ plugins=(
     # zsh-autosuggestions
     # zsh-syntax-highlighting
     # fast-syntax-highlighting
+    # colored-man-pages
+    eza
+    # fzf
+    # colorize
     copyfile
     copybuffer
-    dirhistory
+    # dirhistory
 )
 
 # Set-up oh-my-zsh

@@ -12,6 +12,7 @@ alias ff='fastfetch'
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
+alias l='eza -a --tree --level=1 --icons=always'
 alias shutdown='systemctl poweroff'
 # alias v='$EDITOR'
 # alias vim='$EDITOR'
@@ -186,12 +187,12 @@ alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # ls
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
+# alias l='ls -lh'
+# alias ll='ls -lah'
+# alias la='ls -A'
+# alias lm='ls -m'
+# alias lr='ls -R'
+# alias lg='ls -l --group-directories-first'
 
 # git
 alias gcl='git clone --depth 1'
@@ -211,6 +212,7 @@ alias n="nvim"
 alias nf='nvim $(fzf -m --preview="bat --color=always {}")'
 alias emacs="emacsclient -c -a 'emacs'"
 alias rotdir="~/.local/bin/rotdir"
+# alias cat="ccat"
 
 alias srz="exec zsh"
 # Basic auto/tab complete:
@@ -237,7 +239,6 @@ zle -N zle-keymap-select
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
 
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
