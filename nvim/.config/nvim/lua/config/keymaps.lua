@@ -45,3 +45,24 @@ keymap.set("n", "<C-S-j>", "<C-w>-")
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()
 end, opts)
+
+-- Go Mod Tidy and LSPRestart
+vim.keymap.set("n", "<leader>gt", function()
+	-- Run `go mod tidy`
+	vim.cmd("!go mod tidy")
+
+	-- Stop all LSP clients attached to the current buffer
+	local bufnr = vim.api.nvim_get_current_buf()
+	local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+	for _, client in ipairs(clients) do
+		vim.lsp.stop_client(client.id)
+	end
+
+	-- Wait a bit, then restart the LSP
+	vim.defer_fn(function()
+		vim.cmd("edit") -- reload buffer to re-trigger LSP attach
+		vim.cmd("LspRestart") -- or `vim.lsp.start()` if you're using `lspconfig`
+	end, 100)
+
+	vim.notify("✅ Ran go mod tidy and restarted LSP")
+end, { desc = "Go mod tidy + LSP restart" })
