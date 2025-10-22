@@ -212,6 +212,12 @@ alias n="nvim"
 alias nf='nvim $(fzf -m --preview="bat --color=always {}")'
 alias emacs="emacsclient -c -a 'emacs'"
 alias rotdir="~/.local/bin/rotdir"
+alias p="pnpm"
+alias r="yay -Rns"
+alias i="yay -S"
+alias s="yay -Ss"
+alias q="yay -Qs"
+alias scc="yay -Scc"
 # alias cat="ccat"
 
 alias srz="exec zsh"
