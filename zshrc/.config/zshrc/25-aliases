@@ -257,6 +257,7 @@ source <(fzf --zsh)
 export PATH=$PATH:/home/subah/.local/bin 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export OLLAMA_HOME=$HOME/.ollama
 
 #export http_proxy='http://172.16.1.1:56349'
 #export https_proxy=$http_proxy
