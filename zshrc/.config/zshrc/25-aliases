@@ -218,6 +218,7 @@ alias i="yay -S"
 alias s="yay -Ss"
 alias q="yay -Qs"
 alias scc="yay -Scc"
+alias u="yay -Syu"
 # alias cat="ccat"
 
 alias srz="exec zsh"
