@@ -219,6 +219,7 @@ alias s="yay -Ss"
 alias q="yay -Qs"
 alias scc="yay -Scc"
 alias u="yay -Syu"
+alias w="gowords search"
 # alias cat="ccat"
 
 alias srz="exec zsh"
