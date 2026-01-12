@@ -256,10 +256,13 @@ source <(fzf --zsh)
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
+export HF_HOME=/run/media/subah/HDDp2/huggingface
 export PATH=$PATH:/home/subah/.local/bin 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export OLLAMA_HOME=$HOME/.ollama
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+export OLLAMA_HOME=/run/media/subah/HDDp2/ollama/.ollama
 
 #export http_proxy='http://172.16.1.1:56349'
 #export https_proxy=$http_proxy

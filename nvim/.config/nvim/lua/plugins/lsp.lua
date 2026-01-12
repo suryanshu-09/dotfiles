@@ -1,8 +1,7 @@
 return {
 	-- tools
 	{
-		"williamboman/mason.nvim",
-		version = "v1.11.0",
+		"mason-org/mason.nvim",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
 				"luacheck",
@@ -19,8 +18,7 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		version = "1.32.0",
+		"mason-org/mason-lspconfig.nvim",
 	},
 	-- lsp servers
 	{
