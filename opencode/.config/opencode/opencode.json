@@ -1,0 +1,27 @@
+{
+  "tui": {
+    "theme": "opencode"
+  },
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-supermemory"],
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3:latest": {
+          "name": "Qwen3"
+        },
+        "qwen2.5-coder:latest": {
+          "name": "Qwen2.5 Coder"
+        },
+        "llama2-uncensored:latest": {
+          "name": "llama2-uncensored"
+        }
+      }
+    }
+  }
+}

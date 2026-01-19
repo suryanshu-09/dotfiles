@@ -1,14 +1,30 @@
 #!/bin/sh
 
-image() {
-  FILE_PATH="$1"
-  X=$4
-  Y=$5
-  MW=$(($2 - 1))
-  MH=$3
-  ueberzugpp cmd -s "$UB_SOCKET" -a add -i PREVIEW -x "$X" -y "$Y" --max-width "$MW" --max-height "$MH" -f "$FILE_PATH"
-  exit 1
-}
+# Detect if we're in kitty terminal
+if [ -n "$KITTY_WINDOW_ID" ]; then
+  # Use kitty's native icat for images
+  image() {
+    FILE_PATH="$1"
+    X=$4
+    Y=$5
+    MW=$(($2 - 1))
+    MH=$3
+    kitty +kitten icat --silent --stdin no --transfer-mode memory \
+      --place "${MW}x${MH}@${X}x${Y}" "$FILE_PATH" < /dev/null > /dev/tty
+    exit 1
+  }
+else
+  # Fallback to ueberzugpp for non-kitty terminals
+  image() {
+    FILE_PATH="$1"
+    X=$4
+    Y=$5
+    MW=$(($2 - 1))
+    MH=$3
+    ueberzugpp cmd -s "$UB_SOCKET" -a add -i PREVIEW -x "$X" -y "$Y" --max-width "$MW" --max-height "$MH" -f "$FILE_PATH"
+    exit 1
+  }
+fi
 
 batorcat() {
   file="$1"

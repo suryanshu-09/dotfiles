@@ -262,6 +262,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+export PATH="/home/subah/.bun/bin:$PATH"
 export OLLAMA_HOME=/run/media/subah/HDDp2/ollama/.ollama
 
 #export http_proxy='http://172.16.1.1:56349'
@@ -273,3 +274,7 @@ export OLLAMA_HOME=/run/media/subah/HDDp2/ollama/.ollama
 # eval "$(fnm env --use-on-cd --shell zsh)"
 
 export MANPAGER='nvim +Man!'
+
+# Force yazi to use Kitty's native image protocol instead of ueberzugpp
+# This fixes the janky image preview behavior
+export YAZI_FORCE_GRAPHICAL_ADAPTER=kitty

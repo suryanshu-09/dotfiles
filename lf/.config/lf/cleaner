@@ -1,3 +1,9 @@
 #!/bin/sh
 
-ueberzugpp cmd -s $UB_SOCKET -a remove -i PREVIEW
+if [ -n "$KITTY_WINDOW_ID" ]; then
+  # Use kitty's native clear for images
+  kitty +kitten icat --clear --stdin no --silent --transfer-mode memory < /dev/null > /dev/tty
+else
+  # Fallback to ueberzugpp for non-kitty terminals
+  ueberzugpp cmd -s $UB_SOCKET -a remove -i PREVIEW
+fi
