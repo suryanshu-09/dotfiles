@@ -127,7 +127,7 @@ map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
 map <c-r> reload
-map <c-s> set hidden!
+map <c-h> set hidden!
 map <enter> shell
 map x $$f
 map X !$f

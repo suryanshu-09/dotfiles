@@ -2,3 +2,4 @@
 mpd/.mpd/*
 !mpd/.mpd/mpd.conf
 history.txt
+ralph-state.json
