@@ -23,7 +23,16 @@ return {
 		---@type TSConfig
 		---@diagnostic disable-next-line: missing-fields
 		opts = {
-			highlight = { enable = true },
+			highlight = {
+				enable = true,
+				disable = function(lang, buf)
+					-- Disable treesitter for svelte due to poor Svelte 5 runes support
+					if lang == "svelte" then
+						return true
+					end
+					return false
+				end,
+			},
 			indent = { enable = true },
 			ensure_installed = {
 				"bash",
@@ -96,6 +105,10 @@ return {
 				opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
 			end
 			require("nvim-treesitter").setup(opts)
+
+			-- Disable built-in svelte syntax to avoid conflicts with treesitter
+			vim.g.svelte_preprocess_disable = 1
+			vim.g.svelte_syntax_disable = 1
 		end,
 	},
 	{

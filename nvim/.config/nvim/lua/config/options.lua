@@ -38,7 +38,10 @@ vim.opt.formatoptions:append({ "r" })
 vim.opt.list = true
 vim.opt.listchars:append({
 	tab = "│ ", -- show tabs as vertical bars
-	trail = "·",
-	extends = "»",
-	precedes = "«",
+	trail = "·",	extends = "»",	precedes = "«",
+})
+
+-- Filetype detection for svelte
+vim.filetype.add({
+	extension = { svelte = "svelte" },
 })

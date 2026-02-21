@@ -207,7 +207,7 @@ alias btop="btop --force-utf"
 alias rm="trash-put"
 alias tl="trash-list"
 alias te="trash-empty"
-alias tr="trash-restore"
+# alias tr="trash-restore"
 alias n="nvim"
 alias nf='nvim $(fzf -m --preview="bat --color=always {}")'
 alias emacs="emacsclient -c -a 'emacs'"
