@@ -319,8 +319,15 @@ window-rule {
 window-rule {
     match app-id=r#"^(org.gnome.Calculator|org.gnome.Calendar|io.github.halfmexican.Mingle)$"#
     open-floating true
+
 }
 
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    open-floating true
+    default-column-width { fixed 714; }
+    default-window-height { fixed 406; }
+}
 window-rule {
     match app-id="dev.radhey.VictusControl"
     default-column-width { fixed 714; }
