@@ -1,39 +1,43 @@
 window {
-    font-family: Fira Code Medium;
-    font-size: 16pt;
-    color:  #C0CAF5; /* text */
-    background-color: rgba(23, 24, 25, 0.8);
-}
-   
-button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    background-color: transparent;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s ease-in;
-    box-shadow: 0 0 10px 2px transparent;
-    border-radius: 36px;
-    margin: 10px;
+  font-family: Fira Code Medium;
+  /* font-family: monospace; */
+  font-size: 0pt;
+  color: #c0caf5; /* text */
+  background-color: rgba(23, 24, 25, 0.8);
 }
 
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  background-color: transparent;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s ease-in;
+  box-shadow: 0 0 10px 2px transparent;
+  border-radius: 36px;
+  margin: 10px;
+}
 
 button:focus {
-    background-size: 50%;
-    box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
-    background-color: #BB9AF7;
-    color: transparent;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
-    outline: none;
-    border: none;
+  background-size: 50%;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+  background-color: #bb9af7;
+  color: transparent;
+  transition:
+    all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 0.5s ease-in;
+  outline: none;
+  border: none;
 }
 
 button:hover {
-    background-size: 50%;
-    box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
-    background-color: #BB9AF7;
-    color: transparent;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
+  background-size: 50%;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+  background-color: #bb9af7;
+  color: transparent;
+  transition:
+    all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 0.5s ease-in;
 }
 
 #shutdown {
@@ -45,7 +49,6 @@ button:hover {
 
 #logout {
   background-image: image(url("./icons/logout.png"));
-
 }
 #logout:hover {
   background-image: image(url("./icons/logout-hover.png"));
