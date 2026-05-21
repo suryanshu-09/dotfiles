@@ -19,7 +19,7 @@
       "tray",
       "privacy",
       "custom/separator",
-      "custom/updates",
+      // "custom/updates",
       "idle_inhibitor",
       "custom/notifications",
       "custom/separator",

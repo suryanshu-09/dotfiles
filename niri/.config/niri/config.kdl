@@ -311,13 +311,13 @@ window-rule {
 }
 
 window-rule {
-  match app-id=r#"^(emacs|browseros|emacsclient|org.gnome.Cheese)$"#
+  match app-id=r#"^(Emacs|emacs|browseros|emacsclient|org.gnome.Cheese)$"#
   default-column-width { proportion 1.0; }
   open-floating false
 }
 
 window-rule {
-    match app-id=r#"^(org.gnome.Calculator|org.gnome.Calendar|io.github.halfmexican.Mingle)$"#
+    match app-id=r#"^(org.gnome.Calculator|org.gnome.Calendar|io.github.halfmexican.Mingle|org.pulseaudio.pavucontrol|org-tlauncher-tlauncher-rmo-TLauncher|Tlauncher|Minecraft|Minecraft* 26.1.2)$"#
     open-floating true
 
 }
@@ -686,6 +686,8 @@ binds {
     Mod+H { spawn "gnome-calendar"; }
 
     Mod+U { spawn-sh "~/.config/scripts/sunsetr.sh"; }
+
+    Mod+L { spawn "pavucontrol"; }
 
     Mod+I hotkey-overlay-title="Color Picker"{ spawn "hyprpicker" "--autocopy"; }
 
