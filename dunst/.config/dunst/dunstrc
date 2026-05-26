@@ -268,7 +268,7 @@
     # * context_all: Open context menu for all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = close_current
+    mouse_left_click = do_action, open_url, close_current
     mouse_middle_click = close_all
     mouse_right_click = do_action, close_current
 
@@ -433,4 +433,17 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
+# Browser notifications: click to focus the tab that sent it
+[firefox_browser]
+    desktop_entry = firefox
+    script = ~/.config/dunst/scripts/browser_notif.sh
+
+[zen_browser]
+    desktop_entry = zen
+    script = ~/.config/dunst/scripts/browser_notif.sh
+
+[chromium_browser]
+    desktop_entry = chromium
+    script = ~/.config/dunst/scripts/browser_notif.sh
+
 # vim: ft=cfg

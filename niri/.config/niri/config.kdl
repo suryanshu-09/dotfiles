@@ -28,6 +28,7 @@ input {
         // accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
+        scroll-factor horizontal=-1.0 vertical=1.0
     }
 
     mouse {
@@ -53,6 +54,7 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    workspace-auto-back-and-forth
 }
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -255,7 +257,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 // vicinae
 spawn-at-startup "vicinae" "server"
-spawn-sh-at-startup "swaybg -m fill -i /home/subah/Pictures/Jan.jpeg"
+spawn-sh-at-startup "swaybg -m fill -i /home/subah/Pictures/Pinterest/_-BKv75znoF-transformed.jpeg"
 spawn-at-startup "keepassxc"
 spawn-sh-at-startup "emacs --daemon"
 
@@ -294,7 +296,7 @@ animations {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 window-rule {
-    match app-id=r#"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|dev.zed.Zed)$"#
+    match app-id=r#"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|dev.zed.Zed|brave-browser-nightly)$"#
     default-column-width { proportion 1.0; }
 }
 
@@ -311,7 +313,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id=r#"^(Emacs|emacs|browseros|emacsclient|org.gnome.Cheese)$"#
+  match app-id=r#"^(Emacs|emacs|browseros|emacsclient|org.gnome.Cheese|figma-linux|gimp)$"#
   default-column-width { proportion 1.0; }
   open-floating false
 }
@@ -685,6 +687,8 @@ binds {
 
     Mod+H { spawn "gnome-calendar"; }
 
+    Mod+J { spawn "figma-linux"; }
+
     Mod+U { spawn-sh "~/.config/scripts/sunsetr.sh"; }
 
     Mod+L { spawn "pavucontrol"; }
@@ -708,4 +712,8 @@ binds {
 
     Mod+BracketLeft  { set-column-width "-5%"; }
     Mod+BracketRight { set-column-width "+5%"; }
+}
+
+hotkey-overlay{
+  skip-at-startup
 }
