@@ -259,6 +259,7 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "vicinae" "server"
 spawn-sh-at-startup "swaybg -m fill -i /home/subah/Pictures/Pinterest/_-BKv75znoF-transformed.jpeg"
 spawn-at-startup "keepassxc"
+spawn-at-startup "ydotoold"
 spawn-sh-at-startup "emacs --daemon"
 
 // spawn-at-startup "clipse "listen"
@@ -712,6 +713,21 @@ binds {
 
     Mod+BracketLeft  { set-column-width "-5%"; }
     Mod+BracketRight { set-column-width "+5%"; }
+
+    KP_Home  { spawn "ydotool" "mousemove" "-50" "-50"; }
+    KP_Up    { spawn "ydotool" "mousemove" "0" "-50"; }
+    KP_Prior { spawn "ydotool" "mousemove" "50" "-50"; }
+
+    KP_Left  { spawn "ydotool" "mousemove" "-50" "0"; }
+    KP_Begin { spawn "ydotool" "click" "0xC0"; }
+    KP_Right { spawn "ydotool" "mousemove" "50" "0"; }
+
+    KP_End   { spawn "ydotool" "mousemove" "-50" "50"; }
+    KP_Down  { spawn "ydotool" "mousemove" "0" "50"; }
+    KP_Next  { spawn "ydotool" "mousemove" "50" "50"; }
+
+    KP_Insert { spawn "ydotool" "click" "0xC1"; }
+    KP_Delete { spawn "ydotool" "click" "0xC2"; }
 }
 
 hotkey-overlay{
