@@ -12,7 +12,8 @@
       "custom/padd",
       "niri/workspaces",
       "custom/separator",
-      "group/right-group",
+      // "group/right-group",
+      "niri/window",
     ],
     "modules-center": ["clock", "custom/weather"],
     "modules-right": [
@@ -28,7 +29,7 @@
       "pulseaudio",
       "custom/separator",
       "power-profiles-daemon", // via tuned and tuned-ppd
-      // "custom/bat",
+      "custom/bat",
       "custom/battery",
       "custom/padd",
     ],
