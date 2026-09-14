@@ -181,8 +181,6 @@ layout {
 
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
-        // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
         off
 
         width 1
@@ -297,7 +295,7 @@ animations {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 window-rule {
-    match app-id=r#"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|dev.zed.Zed|brave-browser-nightly)$"#
+    match app-id=r"^(code|Code|VSCodium|zen|google-chrome|chromium|firefox|discord|steam|dev.zed.Zed|brave-browser-nightly)$"
     default-column-width { proportion 1.0; }
 }
 
@@ -314,19 +312,19 @@ window-rule {
 }
 
 window-rule {
-  match app-id=r#"^(Emacs|emacs|browseros|emacsclient|org.gnome.Cheese|figma-linux|gimp|Github Copilot)$"#
+  match app-id=r"^(Emacs|emacs|browseros|emacsclient|org.gnome.Cheese|figma-linux|gimp|Github Copilot)$"
   default-column-width { proportion 1.0; }
   open-floating false
 }
 
 window-rule {
-    match app-id=r#"^(org.gnome.Calculator|org.gnome.Calendar|io.github.halfmexican.Mingle|org.pulseaudio.pavucontrol|org-tlauncher-tlauncher-rmo-TLauncher|Tlauncher|Minecraft|Minecraft* 26.1.2)$"#
+    match app-id=r"^(org.gnome.Calculator|org.gnome.Calendar|io.github.halfmexican.Mingle|org.pulseaudio.pavucontrol|org-tlauncher-tlauncher-rmo-TLauncher|Tlauncher|Minecraft|Minecraft* 26.1.2)$"
     open-floating true
 
 }
 
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r"^org\.keepassxc\.KeePassXC$"
     open-floating true
     default-column-width { fixed 714; }
     default-window-height { fixed 406; }
@@ -354,7 +352,7 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r"firefox$" title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -362,8 +360,8 @@ window-rule {
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r"^org\.keepassxc\.KeePassXC$"
+    match app-id=r"^org\.gnome\.World\.Secrets$"
 
     block-out-from "screen-capture"
 
@@ -459,12 +457,12 @@ window-rule {
 
 
 binds {
-    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
-	XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+	XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
 
     Mod+Q { close-window; }
     Mod+Left  { focus-column-left; }
@@ -531,10 +529,10 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
 
     Mod+WheelScrollRight      { focus-column-right; }
     Mod+WheelScrollLeft       { focus-column-left; }
@@ -694,13 +692,13 @@ binds {
 
     Mod+L { spawn "pavucontrol"; }
 
-    Mod+I hotkey-overlay-title="Color Picker"{ spawn "hyprpicker" "--autocopy"; }
+    Mod+I hotkey-overlay-title="Color Picker" { spawn "hyprpicker" "--autocopy"; }
 
     Mod+Shift+E { spawn "mingle"; }
 
     Mod+Shift+Return { spawn-sh "kitty -e tmux new-session"; }
 
-    Mod+V repeat=false {spawn-sh "vicinae vicinae://launch/clipboard/history"; }
+    Mod+V repeat=false { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
      
     Mod+E repeat=false { spawn-sh "vicinae vicinae://launch/core/search-emojis"; }
     
@@ -730,6 +728,9 @@ binds {
     KP_Delete { spawn "ydotool" "click" "0xC2"; }
 }
 
-hotkey-overlay{
+hotkey-overlay {
   skip-at-startup
 }
+
+environment
+

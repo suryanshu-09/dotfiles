@@ -32,8 +32,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background: @highlight_color;
-  color: @invert_color;
+  background: @fg_color;
+  color: @bg_color;
   box-shadow: inherit;
   text-shadow: inherit;
 }
